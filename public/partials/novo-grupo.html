@@ -1,0 +1,37 @@
+<div>
+    <header>
+        <nav class="navbar justify-content-between navbar-light fixed-top bg-azul">
+            <a href="#!">
+              <img title="voltar" alt="voltar" src="img/back.png" />
+            </a>
+  
+            <h6 class="title">CRIAR NOVO GRUPO</h6>
+  
+            <a href="#!">
+              <img title="sair" alt="sair" src="img/close.png" />
+            </a>
+        </nav>
+    </header>
+    <hr class="bottomBorder" />
+
+    <main class="container-fluid" role="main">
+        <form class="formDadosGrupo">
+            Nome do grupo: <br />
+            <input type="text" name="nomeGrupo" ng-model="vm.dados.nome" value="" /><br />
+            Valor individual: <br />
+            <input type="text" name="valorIndv" ng-model="vm.dados.valor" value="" /><br />
+        </form>
+
+        <div class="boxParticipantes">
+            <div class="adicionarParticipante"></div>
+        </div>
+    </main>
+
+    <footer class="footer fixed-bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <button class="btn btn-block btn-bb" ng-click="vm.salvar()">CONFIRMAR</button>
+            </div>
+        </div>
+    </footer>
+</div>

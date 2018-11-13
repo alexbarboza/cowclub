@@ -1,0 +1,24 @@
+<div>
+    <header>
+        <nav class="navbar justify-content-between navbar-light fixed-top bg-azul">
+            <a href="#!">
+                <img title="voltar" alt="voltar" src="img/back.png" />
+            </a>
+    
+            <h6 class="title">MEUS GRUPOS</h6>
+    
+            <a href="#!">
+                <img title="sair" alt="sair" src="img/close.png" />
+            </a>
+        </nav>
+    </header>
+    <hr class="bottomBorder" />
+
+    <main class="container-fluid" role="main">
+        <ul>
+            <li ng-repeat="grupo in vm.listaGrupos track by $index">
+                {{grupo.nome}}
+            </li>
+        </ul>
+    </main>
+</div>
