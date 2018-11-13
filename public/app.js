@@ -48,7 +48,7 @@
 
         vm.init();
     }])
-    .controller('NovoGrupoController', ['$scope', '$location', function NovoGrupoController($scope, $location) {
+    .controller('NovoGrupoController', ['$scope', '$location', '$timeout', function NovoGrupoController($scope, $location, $timeout) {
         var vm = this;
         vm.dados = null
 
@@ -72,8 +72,10 @@
                 if (error) {
                   console.log(error);
                 } else {
-                  // Data saved successfully!
-                  $location.path('/meus-grupos');
+                    // Data saved successfully!
+                    $timeout(function(){
+                        $location.path('/meus-grupos');
+                    });
                 }
               });
         }
