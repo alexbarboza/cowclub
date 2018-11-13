@@ -1,0 +1,21 @@
+{
+  "name": "cowclub",
+  "version": "1.0.0",
+  "description": "Vaquinha BB",
+  "main": "/public/app.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexbarboza/cowclub.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexbarboza/cowclub/issues"
+  },
+  "homepage": "https://github.com/alexbarboza/cowclub#readme"
+}

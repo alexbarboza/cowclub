@@ -83,3 +83,9 @@
   }
   .adicionarParticipante {
   }
+
+
+  #img_link {
+    max-width: 100%;
+    height: auto;
+  }
