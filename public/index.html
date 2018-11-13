@@ -13,29 +13,31 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-route.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
 
     <script src="app.js"></script>
 </head>
 <body>
-    <div class="container-fluid" ng-app="CowClub" ng-controller="CowClubController as vm">
-        <section id="tela-login" ng-show="vm.tela === 'tela-login'">
-            <img src="img/tela-login.jpg" class="img-fluid" usemap="#maplogin"/>
-            <map id="maplogin" name="maplogin">
-                <area shape="rect" coords="99, 294, 70, 27" href="#"/>
-            </map>
-        </section>
-        <section id="tela-inicial" ng-show="vm.tela === 'tela-inicial'">
-            <img src="img/tela-inicial.jpg" />
-        </section>
-        <section id="tela-menu" ng-show="vm.tela === 'tela-menu'">
-            <img src="img/tela-menu.jpg" />
-        </section>
-        <section id="tela-principal" ng-show="vm.tela === 'tela-principal'">
-            <img src="img/tela-principal.jpg" />
-        </section>
-        <section id="novo-grupo" ng-show="vm.tela === 'novo-grupo'">
-            <img src="img/novo-grupo.jpg" />
-        </section>
+    <div ng-app="CowClub" ng-controller="CowClubController as vm">
+        <header>
+            <nav class="navbar justify-content-between navbar-light fixed-top bg-azul">
+                <a href="index.html">
+                    <img title="Banco do Brasil" alt="Banco do Brasil" src="img/bb_logo.png">
+                </a>
+            </nav>
+        </header>
+
+        <br>
+        <main class="container-fluid" role="main">
+            <h1 class="mt-5">Vaquinha</h1>
+            <p class="lead">O Banco do Brasil ....</p>
+        </main>
+        
+        <footer class="footer fixed-bottom">
+            <div class="container">
+            <span class="text-muted">Place sticky footer content here.</span>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

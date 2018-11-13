@@ -1,19 +1,18 @@
 
-
-azul {
-    color:#225198;
+.bg-amarelo {
+    /* color:#F8D117; */
+    background-color: #d6b206;
 }
 
-amarelo {
-    color:#F8D117;
-    color: #d6b206;
+.bg-azul {
+    background-color:#225198 !important;
 }
 
-cinza {
+.cinza {
     color: #999;
     color: #555;
 }
 
-verde {
+.verde {
     color: #58ad15;
 }
