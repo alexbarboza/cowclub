@@ -3,31 +3,8 @@
   angular
     .module("CowClub", ["ngRoute"])
     .config(function($routeProvider, $locationProvider) {
-<<<<<<< Updated upstream
-            $routeProvider
-            .when('/principal', {
-                templateUrl: '/partials/principal.html',
-                controller: 'PrincipalController as vm'
-            })
-            .when('/novo-grupo', {
-                templateUrl: '/partials/novo-grupo.html',
-                controller: 'NovoGrupoController as vm'
-            })
-            .when('/meus-grupos', {
-                templateUrl: '/partials/meus-grupos.html',
-                controller: 'MeusGruposController as vm'
-            })
-            .when('/tela-login', {
-                templateUrl: '/partials/tela-login.html'
-            })
-            .when('/tela-inicial', {
-                templateUrl: '/partials/tela-inicial.html'
-            })
-            .otherwise({
-                redirectTo: "/tela-login"
-=======
       $routeProvider
-        .when("/", {
+        .when("/principal", {
           templateUrl: "/partials/principal.html",
           controller: "PrincipalController as vm"
         })
@@ -39,9 +16,14 @@
           templateUrl: "/partials/meus-grupos.html",
           controller: "MeusGruposController as vm"
         })
+        .when("/tela-login", {
+          templateUrl: "/partials/tela-login.html"
+        })
+        .when("/tela-inicial", {
+          templateUrl: "/partials/tela-inicial.html"
+        })
         .otherwise({
-          redirectTo: "/"
->>>>>>> Stashed changes
+          redirectTo: "/tela-login"
         });
 
       // configure html5 to get links working on jsfiddle
@@ -107,15 +89,10 @@
                 if (error) {
                   console.log(error);
                 } else {
-<<<<<<< Updated upstream
-                    // Data saved successfully!
-                    $timeout(function(){
-                        $location.path('/meus-grupos');
-                    });
-=======
                   // Data saved successfully!
-                  $location.path("/meus-grupos");
->>>>>>> Stashed changes
+                  $timeout(function() {
+                    $location.path("/meus-grupos");
+                  });
                 }
               }
             );
