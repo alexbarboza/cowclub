@@ -8,7 +8,8 @@
     <link href="bbfav.ico" rel="icon">
     <link href="bb.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
@@ -20,22 +21,39 @@
 <body>
     <div ng-app="CowClub" ng-controller="CowClubController as vm">
         <header>
-            <nav class="navbar justify-content-between navbar-light fixed-top bg-azul">
-                <a href="index.html">
-                    <img title="Banco do Brasil" alt="Banco do Brasil" src="img/bb_logo.png">
+            <nav class="navbar justify-content-between navbar-light bg-azul branco">
+                <h3>
+                    <a href="index.html" class="branco"><i class="material-icons">keyboard_backspace</i></a>
+                    <!-- <img title="Banco do Brasil" alt="Banco do Brasil" src="img/bb_logo.png"> -->
+                    <span>Vaquinha</span>
+                </h3>
+                <a href="index.html" class="branco">
+                    <i class="material-icons">close</i>
                 </a>
             </nav>
         </header>
-
-        <br>
+        
         <main class="container-fluid" role="main">
-            <h1 class="mt-5">Vaquinha</h1>
-            <p class="lead">O Banco do Brasil ....</p>
+            <div class="row">
+                <p class="lead">O <b>Banco do Brasil</b> ajuda você a dividir com seu grupo
+                de amigos as despesas daquele seu futebol, a divisão daquela pizza ou organizar
+                aquele bolão no trabalho.</p>
+                <p class="lead">Pelo aplicativo do BB você pode:
+                    <ul>
+                        <li>Criar e gerenciar seus grupos</li>
+                        <li>Adicionar seus amigos</li>
+                        <li>Acompanhar os pagamentos que já foram realizados</li>
+                    </ul>
+                </p>
+            </div>
         </main>
         
         <footer class="footer fixed-bottom">
-            <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
+            <div class="container-fluid">
+                <div class="row">
+                    <button class="btn btn-block btn-bb">Gerenciar Meus Grupos</button>
+                    <button class="btn btn-block btn-bb">Criar um novo Grupo</button>
+                </div>
             </div>
         </footer>
     </div>

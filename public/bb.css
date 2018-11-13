@@ -1,11 +1,20 @@
 
 .bg-amarelo {
     /* color:#F8D117; */
-    background-color: #d6b206;
+    background-color: #d6b206 !important;
 }
 
 .bg-azul {
-    background-color:#225198 !important;
+    background-color:#225198;
+}
+
+.branco {
+    color: white !important;
+}
+
+.btn-bb {
+    background-color: #faf046 !important;
+    color:#225198;
 }
 
 .cinza {
