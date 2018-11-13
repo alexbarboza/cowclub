@@ -38,8 +38,7 @@
 }
 
 .formDadosGrupo {
-  width: 90%;
-  margin-left: 10% !important;
+  width: 100%;
 }
 
 .formDadosGrupo input {
@@ -91,29 +90,31 @@ h6 {
   border: 0px;
 }
 
-<<<<<<< Updated upstream
-  .botaoFooter {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #faf046;
-    color: white;
-    text-align: center;
-    height: 28px;
-    margin-bottom: 10px;
-  }
-  .adicionarParticipante {
-  }
-
-
-  #img_link {
-    max-width: 100%;
-    height: auto;
-  }
-=======
-.divHead {
-  border-bottom: 4px;
-  border-color: #faf046;
+.botaoFooter {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #faf046;
+  color: white;
+  text-align: center;
+  height: 28px;
+  margin-bottom: 10px;
 }
->>>>>>> Stashed changes
+.adicionarParticipante {
+}
+
+#img_link {
+  max-width: 100%;
+  height: auto;
+}
+
+.meusGrupos ul {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.meusGrupos li {
+  list-style-type: none;
+  list-style-position: inside;
+}

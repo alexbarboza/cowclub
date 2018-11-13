@@ -53,7 +53,8 @@
     .controller("NovoGrupoController", [
       "$scope",
       "$location",
-      function NovoGrupoController($scope, $location) {
+      "$timeout",
+      function NovoGrupoController($scope, $location, $timeout) {
         var vm = this;
         vm.dados = null;
 

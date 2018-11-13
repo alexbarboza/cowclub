@@ -1,24 +1,27 @@
 <div>
-    <header>
-        <nav class="navbar justify-content-between navbar-light fixed-top bg-azul">
-            <a href="#!principal">
-                <img title="voltar" alt="voltar" src="img/back.png" />
-            </a>
-    
-            <h6 class="title">MEUS GRUPOS</h6>
-    
-            <a href="#!tela-inicial">
-                <img title="sair" alt="sair" src="img/close.png" />
-            </a>
-        </nav>
-    </header>
-    <hr class="bottomBorder" />
+  <header>
+    <nav class="navbar justify-content-between navbar-light bg-azul">
+      <a href="#!principal">
+        <img title="voltar" alt="voltar" src="img/back.png" />
+      </a>
 
-    <main class="container-fluid" role="main">
-        <ul>
-            <li ng-repeat="grupo in vm.listaGrupos track by $index">
-                {{grupo.nome}}
-            </li>
-        </ul>
-    </main>
+      <h6 class="title">GERENCIAR GRUPOS</h6>
+
+      <a href="#!tela-inicial">
+        <img title="sair" alt="sair" src="img/close.png" />
+      </a>
+    </nav>
+  </header>
+  <hr class="bottomBorder" />
+
+  <div class="divDivisaoTitulo">Meus Grupos</div>
+
+  <div class="meusGrupos">
+    <ul>
+      <li ng-repeat="grupo in vm.listaGrupos track by $index">
+        {{ grupo.nome }}
+        <hr />
+      </li>
+    </ul>
+  </div>
 </div>
