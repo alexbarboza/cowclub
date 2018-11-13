@@ -16,6 +16,9 @@
           templateUrl: "/partials/meus-grupos.html",
           controller: "MeusGruposController as vm"
         })
+        .when("/detalhe-grupo", {
+          templateUrl: "/partials/detalhe-grupo.html"
+        })
         .when("/tela-login", {
           templateUrl: "/partials/tela-login.html"
         })

@@ -19,7 +19,7 @@
   <div class="meusGrupos">
     <ul>
       <li ng-repeat="grupo in vm.listaGrupos track by $index">
-        {{ grupo.nome }}
+        <a class="btn" ng-href="#!detalhe-grupo">{{ grupo.nome }}</a>
         <hr />
       </li>
     </ul>

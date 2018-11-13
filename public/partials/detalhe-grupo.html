@@ -1,0 +1,58 @@
+<div>
+  <header>
+    <nav class="navbar justify-content-between navbar-light bg-azul">
+      <a href="#!meus-grupos">
+        <img title="voltar" alt="voltar" src="img/back.png" />
+      </a>
+
+      <h6 class="title">{{ grupo.nome }}</h6>
+
+      <a href="#!tela-inicial">
+        <img title="sair" alt="sair" src="img/close.png" />
+      </a>
+    </nav>
+  </header>
+  <hr class="bottomBorder" />
+
+  <div class="divDivisaoTitulo">Dados do Grupo</div>
+
+  <main class="container-fluid" role="main">
+    <form class="formDadosGrupo">
+      Nome do grupo: <br />
+      <input
+        type="text"
+        name="nomeGrupo"
+        ng-model="vm.dados.nome"
+        value=""
+      /><br />
+      Valor individual: <br />
+      <input type="text" name="valorIndv" ng-model="vm.dados.valor" value="" />
+    </form>
+  </main>
+
+  <div style="margin-top: 15px" class="divDivisaoTitulo">Participantes</div>
+
+  <div class="addParticipantes">
+    <button type="button" data-toggle="modal" data-target="#exampleModal">
+      <img
+        style="width: 25px; height: 25px"
+        title="adicionar"
+        alt="adicionar"
+        src="img/add.png"
+      />
+      Adicionar novo participante
+    </button>
+  </div>
+
+  <div class="listaParticipantes"></div>
+
+  <footer class="footer fixed-bottom">
+    <div class="container-fluid">
+      <div class="row">
+        <button class="btn btn-block btn-bb" ng-click="vm.salvar()">
+          <h6><b>CONFIRMAR</b></h6>
+        </button>
+      </div>
+    </div>
+  </footer>
+</div>
