@@ -1,75 +1,97 @@
-
 .bg-amarelo {
-    /* color:#F8D117; */
-    background-color: #d6b206 !important;
+  /* color:#F8D117; */
+  background-color: #d6b206 !important;
 }
 
 .bg-azul {
-    background-color:#225198;
+  background-color: #225198;
 }
 
 .branco {
-    color: white !important;
+  color: white !important;
 }
 
 .btn-bb {
-    background-color: #faf046 !important;
-    color:#225198;
-    font-size: 1.5em !important;
+  background-color: #faf046 !important;
+  color: #225198;
+  font-size: 1.5em !important;
 }
 
 .cinza {
-    color: #999;
-    color: #555;
+  color: #999;
+  color: #555;
 }
 
 .verde {
-    color: #58ad15;
+  color: #58ad15;
 }
 
 /* Criar grupo */
 .title {
-    color: white;
-  }
+  color: white;
+}
 
-  .bottomBorder {
-    border-bottom: 40px;
-    border-style: solid;
-    border-bottom-color: #ffee02;
-  }
+.bottomBorder {
+  display: block;
+  border-top: 4px solid #faf046;
+  margin: 0px;
+}
 
-  .formDadosGrupo {
-    width: 90%;
-    margin-left: 10% !important;
-  }
+.formDadosGrupo {
+  width: 90%;
+  margin-left: 10% !important;
+}
 
-  .formDadosGrupo input {
-    border-style: solid;
-    border-width: 0px 0px 2px 0px;
-    width: 90%;
-    background: white;
-  }
+.formDadosGrupo input {
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  width: 90%;
+  background: white;
+}
 
-  .formDadosGrupo input:focus {
-    padding-top: 1px;
-  }
+.formDadosGrupo input:focus {
+  padding-top: 1px;
+}
 
-  .boxParticipantes {
-    border-width: 2px;
-    border-style: solid;
-    border-color: black;
-    width: 80%;
-    height: 200px;
-    margin-top: 20px;
-    margin-left: 10% !important;
-    margin-right: 10% !important;
-  }
+.divParticipantes {
+  border-width: 2px;
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 10% !important;
+  margin-right: 10% !important;
+}
 
-  h6 {
-    font-size: 14px;
-    padding-top: 7px;
-  }
+h6 {
+  font-size: 14px;
+  padding-top: 7px;
+}
 
+.botaoFooter {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #faf046;
+  color: white;
+  text-align: center;
+  height: 28px;
+  margin-bottom: 10px;
+}
+.divDivisaoTitulo {
+  width: 100%;
+  background: #f2f2f2;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.addParticipantes button {
+  text-decoration: none;
+  color: black;
+  background: none;
+  border: 0px;
+}
+
+<<<<<<< Updated upstream
   .botaoFooter {
     position: fixed;
     left: 0;
@@ -89,3 +111,9 @@
     max-width: 100%;
     height: auto;
   }
+=======
+.divHead {
+  border-bottom: 4px;
+  border-color: #faf046;
+}
+>>>>>>> Stashed changes

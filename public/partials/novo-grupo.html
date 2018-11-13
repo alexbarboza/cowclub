@@ -1,4 +1,5 @@
 <div>
+<<<<<<< Updated upstream
     <header>
         <nav class="navbar justify-content-between navbar-light fixed-top bg-azul">
             <a href="#!principal">
@@ -35,3 +36,82 @@
         </div>
     </footer>
 </div>
+=======
+  <header>
+    <nav class="navbar justify-content-between navbar-light bg-azul">
+      <a href="#!"> <img title="voltar" alt="voltar" src="img/back.png" /> </a>
+
+      <h6 class="title">CRIAR NOVO GRUPO</h6>
+
+      <a href="#!"> <img title="sair" alt="sair" src="img/close.png" /> </a>
+    </nav>
+  </header>
+  <hr class="bottomBorder" />
+
+  <div class="divDivisaoTitulo">Dados do Grupo</div>
+
+  <main class="container-fluid" role="main">
+    <form class="formDadosGrupo">
+      Nome do grupo: <br />
+      <input
+        type="text"
+        name="nomeGrupo"
+        ng-model="vm.dados.nome"
+        value=""
+      /><br />
+      Valor individual: <br />
+      <input type="text" name="valorIndv" ng-model="vm.dados.valor" value="" />
+    </form>
+  </main>
+
+  <div class="divDivisaoTitulo">Participantes</div>
+  <div class="addParticipantes">
+    <button ng-click="vm.modalParticipante()">
+      <img
+        style="width: 25px; height: 25px"
+        title="adicionar"
+        alt="adicionar"
+        src="img/add.png"
+      />
+      Adicionar novo participante
+    </button>
+  </div>
+
+  <div class="listaParticipantes"></div>
+
+  <footer class="footer fixed-bottom">
+    <div class="container-fluid">
+      <div class="row">
+        <button class="btn btn-block btn-bb" ng-click="vm.salvar()">
+          <b>CONFIRMAR</b>
+        </button>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"><p>Modal body text goes here.</p></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+>>>>>>> Stashed changes
