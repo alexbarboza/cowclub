@@ -66,17 +66,12 @@
         vm.init = function() {};
 
         vm.init();
-<<<<<<< Updated upstream
-    }])
-    .controller('NovoGrupoController', ['$scope', '$location', '$timeout', function NovoGrupoController($scope, $location, $timeout) {
-=======
       }
     ])
     .controller("NovoGrupoController", [
       "$scope",
       "$location",
       function NovoGrupoController($scope, $location) {
->>>>>>> Stashed changes
         var vm = this;
         vm.dados = null;
 
