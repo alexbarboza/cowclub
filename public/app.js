@@ -3,7 +3,7 @@
   angular.module('CowClub', ['ngRoute'])
     .config(function($routeProvider, $locationProvider) {
             $routeProvider
-            .when('/', {
+            .when('/principal', {
                 templateUrl: '/partials/principal.html',
                 controller: 'PrincipalController as vm'
             })
@@ -15,8 +15,14 @@
                 templateUrl: '/partials/meus-grupos.html',
                 controller: 'MeusGruposController as vm'
             })
+            .when('/tela-login', {
+                templateUrl: '/partials/tela-login.html'
+            })
+            .when('/tela-inicial', {
+                templateUrl: '/partials/tela-inicial.html'
+            })
             .otherwise({
-                redirectTo: "/"
+                redirectTo: "/tela-login"
         });
     
       // configure html5 to get links working on jsfiddle
