@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+    <!-- <base href="/"> -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -12,50 +13,13 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+</head>
+<body ng-app="CowClub">
+    <ng-view></ng-view>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-route.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-
     <script src="app.js"></script>
-</head>
-<body>
-    <div ng-app="CowClub" ng-controller="CowClubController as vm">
-        <header>
-            <nav class="navbar justify-content-between navbar-light bg-azul branco">
-                <h3>
-                    <a href="index.html" class="branco"><i class="material-icons">keyboard_backspace</i></a>
-                    <!-- <img title="Banco do Brasil" alt="Banco do Brasil" src="img/bb_logo.png"> -->
-                    <span>Vaquinha</span>
-                </h3>
-                <a href="index.html" class="branco">
-                    <i class="material-icons">close</i>
-                </a>
-            </nav>
-        </header>
-        
-        <main class="container-fluid" role="main">
-            <div class="row">
-                <p class="lead">O <b>Banco do Brasil</b> ajuda você a dividir com seu grupo
-                de amigos as despesas daquele seu futebol, a divisão daquela pizza ou organizar
-                aquele bolão no trabalho.</p>
-                <p class="lead">Pelo aplicativo do BB você pode:
-                    <ul>
-                        <li>Criar e gerenciar seus grupos</li>
-                        <li>Adicionar seus amigos</li>
-                        <li>Acompanhar os pagamentos que já foram realizados</li>
-                    </ul>
-                </p>
-            </div>
-        </main>
-        
-        <footer class="footer fixed-bottom">
-            <div class="container-fluid">
-                <div class="row">
-                    <button class="btn btn-block btn-bb">Gerenciar Meus Grupos</button>
-                    <button class="btn btn-block btn-bb">Criar um novo Grupo</button>
-                </div>
-            </div>
-        </footer>
-    </div>
 </body>
 </html>
