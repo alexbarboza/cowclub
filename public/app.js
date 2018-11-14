@@ -65,6 +65,7 @@
       function NovoGrupoController($scope, $location, $timeout) {
         var vm = this;
         vm.dados = null;
+        vm.salvando = false;
 
         vm.modalParticipante = function() {
           console.log("entrou aqui");
@@ -74,23 +75,31 @@
         };
 
         vm.init = function() {
-          vm.dados = {
-            nome: "",
-            valor: 0,
-            participantes: []
-          };
+            vm.salvando = false;
+            vm.dados = {
+                nome: "",
+                valor: 0,
+                participantes: []
+            };
         };
 
         vm.salvar = function() {
-            if (vm.dados.nome && vm.dados.valor){
-                savarGrupo(vm.dados);
-            } else {
-                alert('Informe informe um Nome e um Valor.')
+            if (!vm.dados.nome){
+                alert('Informe informe um Nome para o Grupo.');
+                return;
             }
+
+            if (!vm.dados.valor){
+                alert('Informe informe um Valor.');
+                return;
+            }
+
+            savarGrupo(vm.dados);
         };
 
         function savarGrupo(dados) {
-          firebase
+            vm.salvando = true;
+            firebase
             .database()
             .ref("grupos/" + dados.nome)
             .set(
@@ -101,6 +110,7 @@
               function(error) {
                 if (error) {
                   console.log(error);
+                  vm.salvando = false;
                 } else {
                   // Data saved successfully!
                   $timeout(function() {
@@ -128,6 +138,7 @@
         function buscaGrupos() {
           var gruposRef = firebase.database().ref("grupos");
           gruposRef.on("value", function(snapshot) {
+              console.log(snapshot.key);
             snapshot.forEach(function(childSnapshot) {
               $timeout(function() {
                 vm.listaGrupos.push({

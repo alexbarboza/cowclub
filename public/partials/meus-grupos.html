@@ -22,6 +22,9 @@
         <a class="btn" ng-href="#!detalhe-grupo/{{grupo.nome}}">{{ grupo.nome }}</a>
         <hr />
       </li>
+      <li ng-if="vm.listaGrupos.length == 0">
+          carregando...
+      </li>
     </ul>
   </div>
 </div>
