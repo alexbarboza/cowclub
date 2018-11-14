@@ -21,10 +21,11 @@
         type="text"
         name="nomeGrupo"
         ng-model="vm.dados.nome"
-        value=""
+        value="" ng-required="true"
       /><br />
       Valor individual: <br />
-      <input type="text" name="valorIndv" ng-model="vm.dados.valor" value="" />
+      <input type="text" name="valorIndv" ng-model="vm.dados.valor" value="" 
+        ng-currency currency-symbol="R$ " ng-required="true" />
     </form>
   </main>
 

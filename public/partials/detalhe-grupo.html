@@ -19,14 +19,10 @@
   <main class="container-fluid" role="main">
     <form class="formDadosGrupo">
       Nome do grupo: <br />
-      <input
-        type="text"
-        name="nomeGrupo"
-        ng-model="vm.dados.nome"
-        value=""
-      /><br />
+      {{vm.grupo.nome}}
+      <br />
       Valor individual: <br />
-      <input type="text" name="valorIndv" ng-model="vm.dados.valor" value="" />
+      {{vm.grupo.valor | currency:"R$":2}}
     </form>
   </main>
 

@@ -1,7 +1,11 @@
 (function(angular) {
   "use strict";
   angular
-    .module("CowClub", ["ngRoute"])
+    .module("CowClub", ["ngRoute", "ng-currency"])
+    .run(["$locale", function ($locale) {
+        $locale.NUMBER_FORMATS.GROUP_SEP = "";
+        $locale.NUMBER_FORMATS.DECIMAL_SEP = ",";
+    }])
     .config(function($routeProvider, $locationProvider) {
       $routeProvider
         .when("/principal", {
@@ -16,8 +20,9 @@
           templateUrl: "/partials/meus-grupos.html",
           controller: "MeusGruposController as vm"
         })
-        .when("/detalhe-grupo", {
-          templateUrl: "/partials/detalhe-grupo.html"
+        .when("/detalhe-grupo/:nomeGrupo", {
+          templateUrl: "/partials/detalhe-grupo.html",
+          controller: "DetalheGrupoController as vm"
         })
         .when("/tela-login", {
           templateUrl: "/partials/tela-login.html"
@@ -77,7 +82,11 @@
         };
 
         vm.salvar = function() {
-          savarGrupo(vm.dados);
+            if (vm.dados.nome && vm.dados.valor){
+                savarGrupo(vm.dados);
+            } else {
+                alert('Informe informe um Nome e um Valor.')
+            }
         };
 
         function savarGrupo(dados) {
@@ -133,5 +142,35 @@
 
         vm.init();
       }
-    ]);
+    ])
+    
+    .controller("DetalheGrupoController", [
+        "$scope",
+        "$timeout",
+        "$routeParams",
+        function DetalheGrupoController($scope, $timeout, $routeParams) {
+          var vm = this;
+          vm.grupo = null;
+  
+          vm.init = function() {
+            var nomeGrupo = $routeParams.nomeGrupo;
+            buscaGrupo(nomeGrupo);
+          };
+  
+        function buscaGrupo(nomeGrupo) {
+            var grupoRef = firebase.database().ref("grupos/" + nomeGrupo);
+            grupoRef.on("value", function(snapshot) {
+                $timeout(function(){
+                    vm.grupo = {
+                        nome: nomeGrupo,
+                        valor: snapshot.val().valor,
+                        participantes: []
+                    };
+                });
+            });
+          }
+  
+          vm.init();
+        }
+      ]);
 })(window.angular);
