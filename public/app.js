@@ -30,6 +30,9 @@
         .when("/tela-inicial", {
           templateUrl: "/partials/tela-inicial.html"
         })
+        .when("/facebook", {
+          templateUrl: "/partials/facebook.html"
+        })
         .otherwise({
           redirectTo: "/tela-login"
         });
