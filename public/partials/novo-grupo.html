@@ -117,8 +117,9 @@
             <ul>
               <li
                 ng-repeat="participante in vm.listaParticipantes track by $index"
+                ng-if="!vm.verificaIncluido(participante)"
               >
-                <button class="botaoDadosParticipante">
+                <button class="botaoDadosParticipante" ng-click="vm.incluirParticipante(participante)">
                   <div class="dadosParticipante">
                     <img
                       style="float: left;width: 40px; height: 40px;"
