@@ -98,6 +98,17 @@
             Adicionar
           </button>
         </div>
+        
+        <div class="listaParticipantes">
+            <ul>
+                <li ng-repeat="participante in vm.listaParticipantes track by $index">
+                    <span>{{ participante.nome }} {{ participante.agencia }} {{ participante.conta }}</span>
+                </li>
+                <li ng-if="vm.listaParticipantes.length == 0">
+                    carregando...
+                </li>
+            </ul>
+        </div>
       </div>
     </div>
   </div>

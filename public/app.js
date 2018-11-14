@@ -69,6 +69,7 @@
         var vm = this;
         vm.dados = null;
         vm.salvando = false;
+        vm.listaParticipantes = [];
 
         vm.modalParticipante = function() {
           console.log("entrou aqui");
@@ -84,6 +85,7 @@
                 valor: 0,
                 participantes: []
             };
+            buscarListaParticipantes();
         };
 
         vm.salvar = function() {
@@ -122,6 +124,22 @@
                 }
               }
             );
+        }
+
+        function buscarListaParticipantes() {
+            var participantesRef = firebase.database().ref("participantes");
+            participantesRef.on("value", function(snapshot) {
+                console.log(snapshot.key);
+                snapshot.forEach(function(childSnapshot) {
+                    $timeout(function() {
+                        vm.listaParticipantes.push({
+                            nome: childSnapshot.key,
+                            agencia: childSnapshot.val().Agencia,
+                            conta: childSnapshot.val().Conta
+                        });
+                    });
+                });
+            });
         }
 
         vm.init();
