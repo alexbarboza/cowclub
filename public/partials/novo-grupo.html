@@ -12,7 +12,7 @@
   </header>
   <hr class="bottomBorder" />
 
-  <div class="divDivisaoTitulo">Dados do Grupo</div>
+  <div class="divDivisaoTitulo"><p>Dados do Grupo</p></div>
 
   <main class="container-fluid" role="main">
     <form class="formDadosGrupo">
@@ -21,15 +21,25 @@
         type="text"
         name="nomeGrupo"
         ng-model="vm.dados.nome"
-        value="" ng-required="true"
+        value=""
+        ng-required="true"
       /><br />
       Valor individual: <br />
-      <input type="text" name="valorIndv" ng-model="vm.dados.valor" value="" 
-        ng-currency currency-symbol="R$ " ng-required="true" />
+      <input
+        type="text"
+        name="valorIndv"
+        ng-model="vm.dados.valor"
+        value=""
+        ng-currency
+        currency-symbol="R$ "
+        ng-required="true"
+      />
     </form>
   </main>
 
-  <div style="margin-top: 15px" class="divDivisaoTitulo">Participantes</div>
+  <div style="margin-top: 15px" class="divDivisaoTitulo">
+    <p>Participantes</p>
+  </div>
 
   <div class="addParticipantes">
     <button type="button" data-toggle="modal" data-target="#exampleModal">
@@ -55,6 +65,13 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
+          <img
+            style="width: 25px; height: 25px; margin-left: 120px"
+            title="facebook"
+            alt="voltar"
+            src="img/facebook.png"
+          />&nbsp; Meus Relacionamentos
+
           <button
             type="button"
             class="close"
@@ -65,63 +82,41 @@
           </button>
         </div>
         <div class="modal-body">
-          <!-- <a><img title="voltar" alt="voltar" src="img/ag_ct.png"/></a> -->
-          <button
-            style="text-decoration: none; color: black; background: none; border: 0px;"
-            ng-href="#!facebook"
-            type="button"
-            data-toggle="modal"
-            data-target="#exampleModal"
-          >
-            <img title="voltar" alt="voltar" src="img/facebook.png" />
-          </button>
-        </div>
-        <form class="formDadosParticipante">
-          Agência: <br />
-          <input
-            type="text"
-            name="agencia"
-            ng-model="vm.dados.agencia"
-            value=""
-          /><br />
-          Conta: <br />
-          <input type="text" name="conta" ng-model="vm.dados.conta" value="" />
-        </form>
-        <div class="modal-footer modalParticipante">
-          <button type="button" data-toggle="modal" data-target="#exampleModal">
-            <img
-              style="width: 25px; height: 25px"
-              title="adicionar"
-              alt="adicionar"
-              src="img/add.png"
-            />
-            Adicionar
-          </button>
-        </div>
-        
-        <div class="listaParticipantes">
+          <div class="listaParticipantes">
             <ul>
-                <li ng-repeat="participante in vm.listaParticipantes track by $index">
-                    <span>{{ participante.nome }} {{ participante.agencia }} {{ participante.conta }}</span>
-                </li>
-                <li ng-if="vm.listaParticipantes.length == 0">
-                    carregando...
-                </li>
+              <li
+                ng-repeat="participante in vm.listaParticipantes track by $index"
+              >
+                <img src="img/Pedro.png" />
+                <span
+                  >{{ participante.nome }} {{ participante.agencia }}
+                  {{ participante.conta }}</span
+                >
+                <hr />
+              </li>
+              <li ng-if="vm.listaParticipantes.length == 0">carregando...</li>
             </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="listaParticipantes"></div>
+    <div class="listaParticipantes"></div>
 
-  <footer class="footer fixed-bottom">
-    <div class="container-fluid">
-      <div class="row">
-        <button class="btn btn-block btn-bb" ng-click="vm.salvar()" ng-disabled="vm.salvando">
-          <h6><b>{{vm.salvando ? "SALVANDO" : "CONFIRMAR"}}</b></h6>
-        </button>
+    <footer class="footer fixed-bottom">
+      <div class="container-fluid">
+        <div class="row">
+          <button
+            class="btn btn-block btn-bb"
+            ng-click="vm.salvar()"
+            ng-disabled="vm.salvando"
+          >
+            <h6>
+              <b>{{ vm.salvando ? "SALVANDO" : "CONFIRMAR" }}</b>
+            </h6>
+          </button>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </div>

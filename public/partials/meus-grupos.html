@@ -14,17 +14,17 @@
   </header>
   <hr class="bottomBorder" />
 
-  <div class="divDivisaoTitulo">Meus Grupos</div>
+  <div class="divDivisaoTitulo"><p>Meus Grupos</p></div>
 
   <div class="meusGrupos">
     <ul>
       <li ng-repeat="grupo in vm.listaGrupos track by $index">
-        <a class="btn" ng-href="#!detalhe-grupo/{{grupo.nome}}">{{ grupo.nome }}</a>
+        <a class="btn" ng-href="#!detalhe-grupo/{{grupo.nome}}">{{
+          grupo.nome
+        }}</a>
         <hr />
       </li>
-      <li ng-if="vm.listaGrupos.length == 0">
-          carregando...
-      </li>
+      <li ng-if="vm.listaGrupos.length == 0">carregando...</li>
     </ul>
   </div>
 </div>

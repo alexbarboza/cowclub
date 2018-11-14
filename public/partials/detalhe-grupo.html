@@ -14,19 +14,20 @@
   </header>
   <hr class="bottomBorder" />
 
-  <div class="divDivisaoTitulo">Dados do Grupo</div>
+  <div class="divDivisaoTitulo"><p>Dados do Grupo</p></div>
 
   <main class="container-fluid" role="main">
     <form class="formDadosGrupo">
       Nome do grupo: <br />
-      {{vm.grupo.nome}}
-      <br />
+      {{ vm.grupo.nome }} <br />
       Valor individual: <br />
-      {{vm.grupo.valor | currency:"R$":2}}
+      {{ vm.grupo.valor | currency: "R$":2 }}
     </form>
   </main>
 
-  <div style="margin-top: 15px" class="divDivisaoTitulo">Participantes</div>
+  <div style="margin-top: 15px" class="divDivisaoTitulo">
+    <p>Participantes</p>
+  </div>
 
   <div class="addParticipantes">
     <button type="button" data-toggle="modal" data-target="#exampleModal">
