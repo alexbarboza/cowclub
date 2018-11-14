@@ -5,7 +5,7 @@
         <img title="voltar" alt="voltar" src="img/back.png" />
       </a>
 
-      <h6 class="title">{{ grupo.nome }}</h6>
+      <h6 class="title">{{ vm.grupo.nome }}</h6>
 
       <a href="#!tela-inicial">
         <img title="sair" alt="sair" src="img/close.png" />
@@ -19,9 +19,11 @@
   <main class="container-fluid" role="main">
     <form class="formDadosGrupo">
       Nome do grupo: <br />
-      {{ vm.grupo.nome }} <br />
+      <b>{{ vm.grupo.nome }}</b> <br />
+      <hr style="margin-top:1px" />
       Valor individual: <br />
-      {{ vm.grupo.valor | currency: "R$":2 }}
+      <b>{{ vm.grupo.valor | currency: "R$":2 }}</b>
+      <hr style="margin-top:1px" />
     </form>
   </main>
 
@@ -30,20 +32,23 @@
   </div>
 
   <div class="listaParticipantes">
-      <ul>
-          <li
-              ng-repeat="participante in vm.grupo.participantes track by $index"
-          >
-              <img
-                  style="width: 40px; height: 40px;"
-                  ng-src="img/{{ participante.nome }}.png"
-              />
-              <span
-                  >{{ participante.nome }} {{ participante.agencia }}
-                  {{ participante.conta }}</span
-              >
-          </li>
-      </ul>
+    <ul>
+      <li ng-repeat="participante in vm.grupo.participantes track by $index">
+        <div class="dadosParticipante">
+          <img
+            style="float: left;width: 40px; height: 40px;"
+            ng-src="img/{{ participante.nome }}.png"
+          />
+          <p>
+            <b>{{ participante.nome }}</b>
+          </p>
+          <p>
+            Ag.{{ participante.agencia }} &#183; Cc.{{ participante.conta }}
+          </p>
+        </div>
+        <hr style="margin-right:30px" />
+      </li>
+    </ul>
   </div>
 
   <footer class="footer fixed-bottom">
