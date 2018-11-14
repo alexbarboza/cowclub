@@ -165,3 +165,15 @@ h6 {
   list-style-type: none;
   list-style-position: inside;
 }
+
+.listaParticipantes button {
+  text-decoration: none;
+  color: black;
+  background: none;
+  border: 0px;
+}
+
+.setaDireita {
+  display: block;
+  float: right;
+}

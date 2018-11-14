@@ -87,11 +87,21 @@
               <li
                 ng-repeat="participante in vm.listaParticipantes track by $index"
               >
-                <img src="img/Pedro.png" />
-                <span
-                  >{{ participante.nome }} {{ participante.agencia }}
-                  {{ participante.conta }}</span
-                >
+                <button>
+                  <img
+                    style="width: 40px; height: 40px;"
+                    ng-src="img/{{ participante.nome }}.png"
+                  />
+                  <span
+                    >{{ participante.nome }} {{ participante.agencia }}
+                    {{ participante.conta }}</span
+                  >
+                  <img
+                    class="setaDireita"
+                    style="width: 20px; height: 20px;float: right; margin-top: 10px"
+                    src="img/seta.png"
+                  />
+                </button>
                 <hr />
               </li>
               <li ng-if="vm.listaParticipantes.length == 0">carregando...</li>
