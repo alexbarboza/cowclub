@@ -53,6 +53,25 @@
     </button>
   </div>
 
+  
+  <div class="listaParticipantes">
+        <ul>
+            <li
+                ng-repeat="participante in vm.participantes track by $index"
+            >
+                <img
+                    style="width: 40px; height: 40px;"
+                    ng-src="img/{{ participante.nome }}.png"
+                />
+                <span
+                    >{{ participante.nome }} {{ participante.agencia }}
+                    {{ participante.conta }}</span
+                >
+            </li>
+        </ul>
+    </div>
+
+
   <!-- Modal -->
   <div
     class="modal fade"
@@ -86,8 +105,9 @@
             <ul>
               <li
                 ng-repeat="participante in vm.listaParticipantes track by $index"
+                ng-if="!vm.verificaIncluido(participante)"
               >
-                <button>
+                <button ng-click="vm.incluirParticipante(participante)">
                   <img
                     style="width: 40px; height: 40px;"
                     ng-src="img/{{ participante.nome }}.png"
@@ -110,8 +130,6 @@
         </div>
       </div>
     </div>
-
-    <div class="listaParticipantes"></div>
 
     <footer class="footer fixed-bottom">
       <div class="container-fluid">

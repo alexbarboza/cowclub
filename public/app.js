@@ -70,6 +70,7 @@
         vm.dados = null;
         vm.salvando = false;
         vm.listaParticipantes = [];
+        vm.participantes = [];
 
         vm.modalParticipante = function() {
           console.log("entrou aqui");
@@ -86,6 +87,16 @@
                 participantes: []
             };
             buscarListaParticipantes();
+        };
+
+        vm.incluirParticipante = function(participante) {
+            vm.participantes.push(participante);
+            $('#exampleModal').modal('toggle');
+        };
+
+        vm.verificaIncluido = function(participante) {
+            console.log(participante);
+            return vm.participantes.some(function(p) { participante.nome === p.nome });
         };
 
         vm.salvar = function() {
