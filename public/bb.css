@@ -88,6 +88,11 @@ h6 {
   padding-top: 10px;
 }
 
+.addParticipantes {
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
 .addParticipantes button {
   text-decoration: none;
   color: black;
@@ -151,7 +156,7 @@ h6 {
 }
 
 .formDadosParticipante {
-  width: 90%;
+  width: 70%;
   padding-left: 10%;
 }
 
