@@ -85,6 +85,7 @@ h6 {
 
 .divDivisaoTitulo p {
   padding-left: 10px;
+  padding-top: 10px;
 }
 
 .addParticipantes button {
@@ -174,6 +175,24 @@ h6 {
 }
 
 .setaDireita {
-  display: block;
   float: right;
+  padding-bottom: 25px;
+}
+
+.dadosParticipante {
+  display: inline-block;
+  vertical-align: middle;
+  align-content: space-between;
+  width: 90%;
+}
+.dadosParticipante p {
+  align-self: flex-start;
+  text-align: justify;
+  margin-left: 50px;
+  margin-bottom: 2px;
+  width: 70%;
+}
+
+.botaoDadosParticipante {
+  width: 100%;
 }
