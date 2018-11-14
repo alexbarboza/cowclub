@@ -54,10 +54,10 @@
   </div>
 
   
-  <div class="listaParticipantes">
+    <div class="listaParticipantes">
         <ul>
             <li
-                ng-repeat="participante in vm.participantes track by $index"
+                ng-repeat="participante in vm.dados.participantes track by $index"
             >
                 <img
                     style="width: 40px; height: 40px;"
@@ -69,66 +69,6 @@
                 >
             </li>
         </ul>
-    </div>
-
-
-  <!-- Modal -->
-  <div
-    class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <img
-            style="width: 25px; height: 25px; margin-left: 120px"
-            title="facebook"
-            alt="voltar"
-            src="img/facebook.png"
-          />&nbsp; Meus Relacionamentos
-
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="listaParticipantes">
-            <ul>
-              <li
-                ng-repeat="participante in vm.listaParticipantes track by $index"
-                ng-if="!vm.verificaIncluido(participante)"
-              >
-                <button ng-click="vm.incluirParticipante(participante)">
-                  <img
-                    style="width: 40px; height: 40px;"
-                    ng-src="img/{{ participante.nome }}.png"
-                  />
-                  <span
-                    >{{ participante.nome }} {{ participante.agencia }}
-                    {{ participante.conta }}</span
-                  >
-                  <img
-                    class="setaDireita"
-                    style="width: 20px; height: 20px;float: right; margin-top: 10px"
-                    src="img/seta.png"
-                  />
-                </button>
-                <hr />
-              </li>
-              <li ng-if="vm.listaParticipantes.length == 0">carregando...</li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
 
     <footer class="footer fixed-bottom">
@@ -146,5 +86,66 @@
         </div>
       </div>
     </footer>
+
+    
+  <!-- Modal -->
+  <div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img
+          style="width: 25px; height: 25px; margin-left: 120px"
+          title="facebook"
+          alt="voltar"
+          src="img/facebook.png"
+        />&nbsp; Meus Relacionamentos
+
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="listaParticipantes">
+          <ul>
+            <li
+              ng-repeat="participante in vm.listaParticipantes track by $index"
+              ng-if="!vm.verificaIncluido(participante)"
+            >
+              <button ng-click="vm.incluirParticipante(participante)">
+                <img
+                  style="width: 40px; height: 40px;"
+                  ng-src="img/{{ participante.nome }}.png"
+                />
+                <span
+                  >{{ participante.nome }} {{ participante.agencia }}
+                  {{ participante.conta }}</span
+                >
+                <img
+                  class="setaDireita"
+                  style="width: 20px; height: 20px;float: right; margin-top: 10px"
+                  src="img/seta.png"
+                />
+              </button>
+              <hr />
+            </li>
+            <li ng-if="vm.listaParticipantes.length == 0">carregando...</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   </div>
 </div>

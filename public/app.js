@@ -70,7 +70,6 @@
         vm.dados = null;
         vm.salvando = false;
         vm.listaParticipantes = [];
-        vm.participantes = [];
 
         vm.modalParticipante = function() {
           console.log("entrou aqui");
@@ -90,13 +89,14 @@
         };
 
         vm.incluirParticipante = function(participante) {
-            vm.participantes.push(participante);
+            if (!vm.verificaIncluido(participante)){
+                vm.dados.participantes.push(participante);
+            }
             $('#exampleModal').modal('toggle');
         };
 
         vm.verificaIncluido = function(participante) {
-            console.log(participante);
-            return vm.participantes.some(function(p) { participante.nome === p.nome });
+            return vm.dados.participantes.some(function(p) { return participante.nome === p.nome });
         };
 
         vm.salvar = function() {
@@ -176,7 +176,7 @@
                 vm.listaGrupos.push({
                   nome: childSnapshot.key,
                   valor: childSnapshot.val().valor,
-                  participantes: []
+                  participantes: childSnapshot.val().participantes
                 });
               });
             });
@@ -207,7 +207,7 @@
                     vm.grupo = {
                         nome: nomeGrupo,
                         valor: snapshot.val().valor,
-                        participantes: []
+                        participantes: snapshot.val().participantes
                     };
                 });
             });

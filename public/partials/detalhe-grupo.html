@@ -29,19 +29,22 @@
     <p>Participantes</p>
   </div>
 
-  <div class="addParticipantes">
-    <button type="button" data-toggle="modal" data-target="#exampleModal">
-      <img
-        style="width: 25px; height: 25px"
-        title="adicionar"
-        alt="adicionar"
-        src="img/add.png"
-      />
-      Adicionar novo participante
-    </button>
+  <div class="listaParticipantes">
+      <ul>
+          <li
+              ng-repeat="participante in vm.grupo.participantes track by $index"
+          >
+              <img
+                  style="width: 40px; height: 40px;"
+                  ng-src="img/{{ participante.nome }}.png"
+              />
+              <span
+                  >{{ participante.nome }} {{ participante.agencia }}
+                  {{ participante.conta }}</span
+              >
+          </li>
+      </ul>
   </div>
-
-  <div class="listaParticipantes"></div>
 
   <footer class="footer fixed-bottom">
     <div class="container-fluid">
